@@ -23,13 +23,16 @@ $(document).ready(function() {
 	       return results[1] || 0;
 	    }
 	}
-	$('#submit1').on("click", function(){
-		$('.product_information').fadeOut();
+	$("#form1").submit(function(event){
+	  	event.preventDefault();
+	  	$('.product_name').text("Shipping Address");
+	  	$('.product_information').fadeOut();
 		$('.product_address').fadeIn();
 	});
-	$('#submit2').on("click", function(){
+	$('#form2').submit(function(event){
+		event.preventDefault();
+		$('.product_name').text("Order Summery");
 		$('.product_address').fadeOut();
-		$('.sku-container-header').fadeOut();
 		$('.product_summery').fadeIn();
 
 		var size = $('#product_size').val();
